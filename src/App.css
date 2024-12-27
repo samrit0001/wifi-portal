@@ -1,38 +1,443 @@
-.App {
-  text-align: center;
+
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.AppPage {
+  font-family: 'IM Fell English', serif;
+  background-image: repeating-linear-gradient(60deg, #000 0px, #222 2px, #000 4px);
+  color: #fffefe;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.RestartButton {
+  position: absolute;
+  left: 50%;
+  top: -0.5em;
+  font: inherit;
+  font-size: 4em;
+  color: #444;
+  background: none;
+  border: none;
+  translate: -50% -50%;
+  opacity: 0.5;
+  animation: restart 1s 16s forwards;
+  transition: color 0.1s;
+
+  &:hover {
+    color: #aaa;
   }
+
+  &:active {
+    opacity: 1;
+    color: #fff;
+
+    &,
+    &~.typing::before,
+    &~.typing::after {
+      animation: none;
+    }
+  }
+}
+
+@keyframes restart {
   to {
-    transform: rotate(360deg);
+    color: #fff;
   }
+}
+
+.typing {
+  font-size: 48px;
+  text-align: center;
+
+  &::before {
+    content: '';
+    animation: text 5s 1s step-end forwards;
+  }
+
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    translate: -0.2em;
+    animation: chars 1.8s 0.5s step-end 3;
+  }
+}
+
+@keyframes text {
+  0% {
+    content: 'W';
+  }
+
+  4% {
+    content: 'We';
+  }
+
+  8% {
+    content: 'Wel';
+  }
+
+  12% {
+    content: 'Welc';
+  }
+
+  16% {
+    content: 'Welco';
+  }
+
+  20% {
+    content: 'Welcom ';
+  }
+
+  24% {
+    content: 'Welcome';
+  }
+
+  28% {
+    content: 'Welcome T';
+  }
+
+  32% {
+    content: 'Welcome To';
+  }
+
+  36% {
+    content: 'Welcome To A';
+  }
+
+  40% {
+    content: 'Welcome To Am';
+  }
+
+  44% {
+    content: 'Welcome To Amr';
+  }
+
+  48% {
+    content: 'Welcome To Amri';
+  }
+
+  52% {
+    content: 'Welcome To Amrit';
+  }
+
+  56% {
+    content: 'Welcome To Amrit S';
+  }
+
+  60% {
+    content: 'Welcome To Amrit Sm';
+  }
+
+  64% {
+    content: 'Welcome To Amrit Sma';
+  }
+
+  68% {
+    content: 'Welcome To Amrit Smar';
+  }
+
+  72% {
+    content: 'Welcome To Amrit Smart';
+  }
+
+  76% {
+    content: 'Welcome To Amrit Smart N';
+  }
+
+  80% {
+    content: 'Welcome To Amrit Smart Ne';
+  }
+
+  84% {
+    content: 'Welcome To Amrit Smart Net';
+  }
+
+  88% {
+    content: 'Welcome To Amrit Smart Netw';
+  }
+
+  92% {
+    content: 'Welcome To Amrit Smart Netwo';
+  }
+
+  96% {
+    content: 'Welcome To Amrit Smart Networ';
+  }
+
+  100% {
+    content: 'Welcome To Amrit Smart Network';
+  }
+
+}
+
+@keyframes chars {
+  0% {
+    content: 'a';
+  }
+
+  2% {
+    content: 'M';
+  }
+
+  4% {
+    content: 'b';
+  }
+
+  6% {
+    content: 'N';
+  }
+
+  8% {
+    content: 'c';
+  }
+
+  10% {
+    content: 'O';
+  }
+
+  12% {
+    content: 'd';
+  }
+
+  14% {
+    content: 'P';
+  }
+
+  16% {
+    content: 'e';
+  }
+
+  18% {
+    content: 'Q';
+  }
+
+  20% {
+    content: 'f';
+  }
+
+  22% {
+    content: 'R';
+  }
+
+  24% {
+    content: 'g';
+  }
+
+  26% {
+    content: 'S';
+  }
+
+  28% {
+    content: 'h';
+  }
+
+  30% {
+    content: 'T';
+  }
+
+  32% {
+    content: 'i';
+  }
+
+  34% {
+    content: 'U';
+  }
+
+  36% {
+    content: 'j';
+  }
+
+  38% {
+    content: 'V';
+  }
+
+  40% {
+    content: 'k';
+  }
+
+  42% {
+    content: 'W';
+  }
+
+  44% {
+    content: 'l';
+  }
+
+  46% {
+    content: 'X';
+  }
+
+  48% {
+    content: 'm';
+  }
+
+  50% {
+    content: 'Y';
+  }
+
+  52% {
+    content: 'n';
+  }
+
+  54% {
+    content: 'Z';
+  }
+
+  56% {
+    content: 'o';
+  }
+
+  58% {
+    content: 'A';
+  }
+
+  60% {
+    content: 'p';
+  }
+
+  62% {
+    content: 'B';
+  }
+
+  64% {
+    content: 'q';
+  }
+
+  66% {
+    content: 'C';
+  }
+
+  68% {
+    content: 'r';
+  }
+
+  70% {
+    content: 'D';
+  }
+
+  72% {
+    content: 's';
+  }
+
+  74% {
+    content: 'E';
+  }
+
+  76% {
+    content: 't';
+  }
+
+  78% {
+    content: 'F';
+  }
+
+  80% {
+    content: 'u';
+  }
+
+  82% {
+    content: 'G';
+  }
+
+  84% {
+    content: 'v';
+  }
+
+  86% {
+    content: 'H';
+  }
+
+  88% {
+    content: 'w';
+  }
+
+  90% {
+    content: 'I';
+  }
+
+  92% {
+    content: 'x';
+  }
+
+  94% {
+    content: 'J';
+  }
+
+  96% {
+    content: 'y';
+  }
+
+  98% {
+    content: 'K';
+  }
+}
+
+
+
+.Start {
+  --glow-color: rgb(217, 176, 255);
+  --glow-spread-color: rgba(191, 123, 255, 0.781);
+  --enhanced-glow-color: rgb(231, 206, 255);
+  --btn-color: rgb(100, 61, 136);
+  margin-top: 100px;
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 15px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+    0 0 4em 1em var(--glow-spread-color),
+    inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  position: absolute;
+  left:48%;
+  transition: all 0.3s;
+  position: absolute;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.Start::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--glow-spread-color);
+  filter: blur(2em);
+  opacity: .7;
+  transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+.Start:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+    0 0 4em 2em var(--glow-spread-color),
+    inset 0 0 .75em .25em var(--glow-color);
+}
+
+.Start:active {
+  box-shadow: 0 0 0.6em .25em var(--glow-color),
+    0 0 2.5em 2em var(--glow-spread-color),
+    inset 0 0 .5em .25em var(--glow-color);
 }

@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
+import Profile from './components/Profile';
 
 function App() {
+  const navigate = useNavigate();
+
+  const handleStartClick = () => {
+    navigate('/profile');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="AppPage">
+      <Routes>
+        <Route path="/" element={
+          <div class="container">
+            <button className="RestartButton">&#8635;</button>
+            <div class="typing"></div>
+            <button className="Start" onClick={handleStartClick}>Start</button> 
+          </div>
+        }/>
+      
+        <Route path="/profile" element={<Profile />} />
+        
+        </Routes>
     </div>
   );
 }
